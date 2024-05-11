@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do Task Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#addTask">Add Task</a></li>
+            <li><a href="#deletedTask">Deleted Tasks</a></li>
+            <li><a href="#taskList">Task List</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="addTask" class="task-section">
+            <h2>Add Task</h2>
+            <form action="add_task.php" method="POST">
+                <label for="taskTitle">Task Title:</label>
+                <input type="text" id="taskTitle" name="taskTitle" required>
+                <label for="taskDescription">Task Description:</label>
+                <textarea id="taskDescription" name="taskDescription" required></textarea>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+
+        <div id="deletedTask" class="task-section">
+            <h2>Deleted Tasks</h2>
+            <p>No tasks deleted yet.</p>
+        </div>
+
+        <div id="taskList" class="task-section">
+            <h2>Task List</h2>
+            <?php include 'fetch_tasks.php'; ?>
+        </div>
+    </div>
+</body>
+</html>
